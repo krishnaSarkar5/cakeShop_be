@@ -43,7 +43,7 @@ public class AuthenticationController {
 		
 		UserDetails userDetails = this.customUserDetailService.loadUserByUsername(jwtAuthRequest.getEmail());
 		
-		String token = this.jwtTokenHelper.generateToken(userDetails);
+		String token = "Bearer "+this.jwtTokenHelper.generateToken(userDetails);
 		
 		JwtAuthResponse jwtAuthResponse = new JwtAuthResponse();
 		
